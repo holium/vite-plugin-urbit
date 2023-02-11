@@ -1,5 +1,5 @@
 {
-  "name": "@urbit/vite-plugin-urbit",
+  "name": "@holium/vite-plugin-urbit",
   "version": "0.8.0",
   "description": "A plugin to setup proxying from a vite devserver to an Urbit ship",
   "main": "dist/index.js",
@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liam-fitzgerald/vite-plugin-urbit.git"
+    "url": "git+https://github.com/holium/vite-plugin-urbit.git"
   },
   "files": [
     "dist",
@@ -29,14 +29,14 @@
     "@types/node": "^16.11.0",
     "esbuild": "^0.13.2",
     "typescript": "^4.4.3",
-    "vite": "^2.6.5"
+    "vite": "^4.1.0"
   },
   "bugs": {
     "url": "https://github.com/liam-fitzgerald/vite-plugin-urbit/issues"
   },
   "homepage": "https://github.com/liam-fitzgerald/vite-plugin-urbit#readme",
   "dependencies": {
-    "vite-plugin-html-config": "^1.0.6",
-    "vite-plugin-rewrite-all": "^0.1.2"
+    "vite-plugin-html-config": "^1.0.11",
+    "vite-plugin-rewrite-all": "^1.0.1"
   }
 }

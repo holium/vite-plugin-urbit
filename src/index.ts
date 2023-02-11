@@ -1,6 +1,6 @@
-import * as htmlPlugin from "vite-plugin-html-config";
-import rewriteAll from "vite-plugin-rewrite-all";
-import { ProxyOptions } from "vite";
+import * as htmlPlugin from 'vite-plugin-html-config';
+import rewriteAll from 'vite-plugin-rewrite-all';
+import { ProxyOptions } from 'vite';
 
 export interface UrbitPluginConfig extends ProxyOptions {
   /**
@@ -19,18 +19,18 @@ export interface UrbitPluginConfig extends ProxyOptions {
 const UrbitProxyPlugin = ({ base, target, ...options }: UrbitPluginConfig) => {
   const basePath = `/apps/${base}/`;
   return {
-    name: "return-partial",
+    name: 'return-partial',
     config: () => ({
       base: basePath,
       server: {
         proxy: {
           [`^${basePath}desk.js`]: {
             target,
-            ...options
+            ...options,
           },
           [`^((?!${basePath}).)*$`]: {
             target,
-            ...options
+            ...options,
           },
         },
       },
@@ -45,10 +45,12 @@ const UrbitProxyPlugin = ({ base, target, ...options }: UrbitPluginConfig) => {
 export const urbitPlugin = (config: UrbitPluginConfig) => {
   const htmlPluginOpt = {
     headScripts: [
-      { src: `/apps/${config.base}/desk.js` },
-      { src: "/session.js" },
+      { src: `${config.target}/apps/${config.base}/desk.js` },
+      { src: `${config.target}/session.js` },
     ],
   };
 
+  // not sure why this ignore is needed, but the package won't build otherwise
+  // @ts-ignore
   return [UrbitProxyPlugin(config), rewriteAll(), htmlPlugin(htmlPluginOpt)];
 };

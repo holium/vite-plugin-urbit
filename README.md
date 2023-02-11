@@ -1,18 +1,18 @@
 # vite-plugin-urbit
 
-A plugin to setup proxying to a running Urbit on a vite devserver correctly. 
+A plugin to setup proxying to a running Urbit on a vite devserver correctly.
 The plugin also inserts the correct script tags, so that window.ship and
 window.desk are loaded correctly
 
 ## Usage
 
 ```typescript
-import urbitPlugin from "@urbit/vite-plugin-urbit";
+import urbitPlugin from '@holium/vite-plugin-urbit';
 // rest of config
 plugins: [
   urbitPlugin({
-    base: "bitcoin",
-    target: "http://localhost:8080",
+    base: 'bitcoin',
+    target: 'http://localhost:8080',
   }),
 ];
 ```
