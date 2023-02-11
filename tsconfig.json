@@ -1,13 +1,13 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist",
-        "sourceMap": true,
-        "lib": ["ES2021", "dom"],
-        "declaration": true,
-        "esModuleInterop": false,
-        "moduleResolution": "Node",
-        "module": "CommonJS",
-        "types": ["node"]
-    },
-    "files": ["./src/index.ts"]
+  "compilerOptions": {
+    "outDir": "./dist",
+    "sourceMap": true,
+    "lib": ["ES2021", "dom"],
+    "declaration": true,
+    "esModuleInterop": false,
+    "moduleResolution": "Node",
+    "module": "CommonJS",
+    "types": ["node"]
+  },
+  "files": ["./src/index.ts"]
 }
